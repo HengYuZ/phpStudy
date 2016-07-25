@@ -12,8 +12,8 @@ function mergeSort(&$arr, &$tmp, $left, $right)
     //设置递归出口，当递归到只有一个数组元素时，返回。
     if ($left == $right)
         return;
-    //获取一半的数组长度
-    $mid = ($left + $right) / 2;
+    //获取一半的数组长度,向下取整。这里需要与C++区分开来，不然会出现递归没法结束。
+    $mid = floor(($left + $right) / 2);
     mergeSort($arr, $tmp, $left, $mid);
     mergeSort($arr, $tmp, $mid + 1, $right);
     //把$arr数组的值存放到临时数组$tmp中
@@ -29,8 +29,7 @@ function mergeSort(&$arr, &$tmp, $left, $right)
         //当$i1 = $mid+1,证明左边的已经没有了，只需把右边的全部赋值给$arr数组就可以了
         if ($i1 == $mid + 1) {
             $arr[$curr] = $tmp[$i2++];
-        }
-        //当$i2 > $right;证明右边的已经没有值，只需把左边赋值给$arr就可以了
+        } //当$i2 > $right;证明右边的已经没有值，只需把左边赋值给$arr就可以了
         elseif ($i2 > $right) {
             $arr[$curr] = $tmp[$i1++];
         }
@@ -44,7 +43,7 @@ function mergeSort(&$arr, &$tmp, $left, $right)
     }
 }
 
-$arr = array(9, 3, 53, 17, 7);
+$arr = array(9, 2, 232, 12, 1, 3, 53, 17, 7);
 $tmp = array();
-mergeSort($arr, $tmp, 0, count($arr)-1);
+mergeSort($arr, $tmp, 0, count($arr) - 1);
 var_dump($arr);
