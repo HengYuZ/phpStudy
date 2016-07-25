@@ -2,12 +2,6 @@
 /**
  * Created by PhpStorm.
  * User: zhanghengyu
-<<<<<<< HEAD
- * Date: 2016/7/22
- * Time: 17:42
- */
-
-=======
  * Date: 2016/7/24
  * Time: 17:22
  * 插入排序
@@ -16,16 +10,7 @@
 function insertionSort(&$arr)
 {
     $len = count($arr);
-    for ($i = 0; $i < $len; $i++) {
-<<<<<<< HEAD
-        for ($j = 0; $j < $i; $j++) {
-            if($arr[$j]>$arr[$i]){
-                
-            }
-        }
-    }
-}
-=======
+    for ($i = 0; $i < $len; $i++)
         for ($j = $i; $j > 0; $j--) {
             if ($arr[$j] < $arr[$j - 1]) {
                 $tmp = $arr[$j];
