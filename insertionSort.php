@@ -6,7 +6,6 @@
  * Time: 17:22
  * 插入排序
  */
->>>>>>> 36f96d7dfaa3a92c4258fe60cbc0c9ec7972f516
 function insertionSort(&$arr)
 {
     $len = count($arr);
@@ -16,12 +15,10 @@ function insertionSort(&$arr)
                 $tmp = $arr[$j];
                 $arr[$j] = $arr[$j - 1];
                 $arr[$j - 1] = $tmp;
-            }
-        }
-    }
+          }
+     }
 }
 
 $arr = array(9, 2, 232, 12, 1, 3, 53, 17, 7);
 insertionSort($arr);
 var_dump($arr);
->>>>>>> 36f96d7dfaa3a92c4258fe60cbc0c9ec7972f516
